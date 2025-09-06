@@ -32,12 +32,6 @@ namespace student_notes_making_system
             timetable_image main = new timetable_image();
             main.Show();
             this.Hide();
-
-
-
-
-
-
         }
     }
 }

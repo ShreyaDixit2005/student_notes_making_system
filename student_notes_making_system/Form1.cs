@@ -17,7 +17,7 @@ namespace student_notes_making_system
         }
 
         private void Form1_Load(object sender, EventArgs e)
-        {
+        {            
 
         }
 
@@ -38,6 +38,7 @@ namespace student_notes_making_system
 
         private void button1_Click(object sender, EventArgs e)
         {
+            
             if (ValidateLogin())
             {
                 MessageBox.Show("Login Successful!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -82,6 +83,10 @@ namespace student_notes_making_system
                 SqlCommand cmd = new SqlCommand(query, con);
                 cmd.Parameters.AddWithValue("@username", txtUsername.Text);
                 cmd.Parameters.AddWithValue("@password", txtPassword.Text);
+
+                Properties.Settings.Default.Username = txtUsername.Text;
+                Properties.Settings.Default.Password = txtPassword.Text;
+                Properties.Settings.Default.Save();
 
                 con.Open();
                 int result = (int)cmd.ExecuteScalar();

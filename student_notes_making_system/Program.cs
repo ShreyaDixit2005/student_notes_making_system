@@ -8,10 +8,20 @@ namespace student_notes_making_system
         [STAThread]
         static void Main()
         {
-            // To customize application configuration such as set high DPI settings or default font,
-            // see https://aka.ms/applicationconfiguration.
-            ApplicationConfiguration.Initialize();
-            Application.Run(new Form1());
+            Application.EnableVisualStyles();
+            Application.SetCompatibleTextRenderingDefault(false);
+
+            string username = Properties.Settings.Default.Username;
+            string password = Properties.Settings.Default.Password;
+
+            if (!string.IsNullOrEmpty(username) && !string.IsNullOrEmpty(password))
+            {
+                Application.Run(new notes_and_timet3()); // open main form directly
+            }
+            else
+            {
+                Application.Run(new Form1()); // open login form
+            }
         }
     }
 }

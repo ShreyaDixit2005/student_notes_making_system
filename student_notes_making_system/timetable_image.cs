@@ -17,6 +17,30 @@ namespace student_notes_making_system
             InitializeComponent();
         }
 
+        private void timetable_image_Load(object sender, EventArgs e)
+        {
+            string classValue = Properties.Settings.Default.Class;
+
+            string projectPath = Directory.GetParent(Application.StartupPath).Parent.Parent.Parent.FullName;
+
+
+            if (classValue == "1")
+            {
+                string imagePath = Path.Combine(projectPath, "Images", "timetable-3rd.jpeg");
+                Image.Image = System.Drawing.Image.FromFile(imagePath);
+            }
+            if (classValue == "2")
+            {
+                string imagePath = Path.Combine(projectPath, "Images", "timetable-3rd.jpeg");
+                Image.Image = System.Drawing.Image.FromFile(imagePath);
+            }
+            if (classValue == "3")
+            {
+                string imagePath = Path.Combine(projectPath, "Images", "timetable-3rd.jpeg");
+                Image.Image = System.Drawing.Image.FromFile(imagePath);
+            }
+        }
+
         private void pictureBox1_Click(object sender, EventArgs e)
         {
 
@@ -47,6 +71,11 @@ namespace student_notes_making_system
             notes_and_timet3 main = new notes_and_timet3();
             main.Show();
             this.Hide();
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
 
         }
     }

@@ -43,6 +43,10 @@
             cmbClass = new ComboBox();
             label7 = new Label();
             txtPRN = new TextBox();
+            label8 = new Label();
+            label9 = new Label();
+            Username = new TextBox();
+            Password = new TextBox();
             SuspendLayout();
             // 
             // label1
@@ -112,7 +116,7 @@
             txtFullName.Name = "txtFullName";
             txtFullName.Size = new Size(256, 27);
             txtFullName.TabIndex = 6;
-            txtFullName.TextChanged += this.textBox3_TextChanged_1;//.txtFullName_TextChanged;
+            txtFullName.TextChanged += textBox3_TextChanged_1;
             // 
             // txtRollNo
             // 
@@ -120,11 +124,11 @@
             txtRollNo.Name = "txtRollNo";
             txtRollNo.Size = new Size(256, 27);
             txtRollNo.TabIndex = 7;
-            txtRollNo.TextChanged += this.textBox3_TextChanged_1;//txtRollNo_TextChanged;
-            // ;
+            txtRollNo.TextChanged += textBox3_TextChanged_1;
+            // 
             // txtDivision
             // 
-            txtDivision.Location = new Point(383, 314);
+            txtDivision.Location = new Point(383, 317);
             txtDivision.Name = "txtDivision";
             txtDivision.Size = new Size(256, 27);
             txtDivision.TabIndex = 9;
@@ -135,7 +139,7 @@
             label6.BackColor = Color.Transparent;
             label6.Font = new Font("Times New Roman", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label6.ForeColor = SystemColors.AppWorkspace;
-            label6.Location = new Point(236, 316);
+            label6.Location = new Point(233, 319);
             label6.Name = "label6";
             label6.Size = new Size(89, 25);
             label6.TabIndex = 5;
@@ -146,7 +150,7 @@
             // 
             btnSubmit.BackColor = SystemColors.ControlDarkDark;
             btnSubmit.Font = new Font("Times New Roman", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnSubmit.Location = new Point(524, 380);
+            btnSubmit.Location = new Point(524, 501);
             btnSubmit.Name = "btnSubmit";
             btnSubmit.Size = new Size(115, 46);
             btnSubmit.TabIndex = 10;
@@ -158,7 +162,7 @@
             // 
             btnUpdate.BackColor = SystemColors.ControlDarkDark;
             btnUpdate.Font = new Font("Times New Roman", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnUpdate.Location = new Point(210, 380);
+            btnUpdate.Location = new Point(210, 501);
             btnUpdate.Name = "btnUpdate";
             btnUpdate.Size = new Size(115, 46);
             btnUpdate.TabIndex = 13;
@@ -196,6 +200,45 @@
             txtPRN.TabIndex = 16;
             txtPRN.TextChanged += textBox3_TextChanged_1;
             // 
+            // label8
+            // 
+            label8.AutoSize = true;
+            label8.BackColor = Color.Transparent;
+            label8.Font = new Font("Times New Roman", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label8.ForeColor = SystemColors.AppWorkspace;
+            label8.Location = new Point(206, 439);
+            label8.Name = "label8";
+            label8.Size = new Size(109, 25);
+            label8.TabIndex = 17;
+            label8.Text = "Password";
+            label8.Click += label8_Click;
+            // 
+            // label9
+            // 
+            label9.AutoSize = true;
+            label9.BackColor = Color.Transparent;
+            label9.Font = new Font("Times New Roman", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label9.ForeColor = SystemColors.AppWorkspace;
+            label9.Location = new Point(201, 394);
+            label9.Name = "label9";
+            label9.Size = new Size(114, 25);
+            label9.TabIndex = 18;
+            label9.Text = "Username";
+            // 
+            // Username
+            // 
+            Username.Location = new Point(383, 392);
+            Username.Name = "Username";
+            Username.Size = new Size(256, 27);
+            Username.TabIndex = 19;
+            // 
+            // Password
+            // 
+            Password.Location = new Point(383, 437);
+            Password.Name = "Password";
+            Password.Size = new Size(256, 27);
+            Password.TabIndex = 20;
+            // 
             // Student_Details2
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -203,7 +246,11 @@
             BackColor = SystemColors.ControlDarkDark;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = ImageLayout.Stretch;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(885, 583);
+            Controls.Add(Password);
+            Controls.Add(Username);
+            Controls.Add(label9);
+            Controls.Add(label8);
             Controls.Add(txtPRN);
             Controls.Add(label7);
             Controls.Add(cmbClass);
@@ -242,5 +289,9 @@
         private ComboBox cmbClass;
         private Label label7;
         private TextBox txtPRN;
+        private Label label8;
+        private Label label9;
+        private TextBox Username;
+        private TextBox Password;
     }
 }

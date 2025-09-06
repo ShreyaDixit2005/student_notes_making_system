@@ -44,10 +44,10 @@ namespace student_notes_making_system
                 this.Hide();
             }
             else
-            {                
+            {
                 return;
             }
-                
+
         }
 
         private bool InsertStudentDetailsIntoDatabase()
@@ -56,24 +56,32 @@ namespace student_notes_making_system
 
             using (SqlConnection con = new SqlConnection(conString))
             {
-                string query = @"INSERT INTO dbo.Stud_Det 
+                string insertStudentDetails = @"INSERT INTO dbo.Stud_Det 
                          (PRN_NO, FullName, RollNo, Class, Division) 
                          VALUES (@prn, @fullname, @rollno, @class, @division)";
 
-                SqlCommand cmd = new SqlCommand(query, con);
+                string insertLoginDetails = @"INSERT INTO dbo.Login_T (Username, Passwordd) VALUES (@username, @password)";
 
-                // Replace these txt... with the actual TextBox names from your form
-                cmd.Parameters.AddWithValue("@prn", txtPRN.Text);
-                cmd.Parameters.AddWithValue("@fullname", txtFullName.Text);
-                cmd.Parameters.AddWithValue("@rollno", txtRollNo.Text);
-                cmd.Parameters.AddWithValue("@class", int.Parse(cmbClass.Text));   // since Class is INT
-                cmd.Parameters.AddWithValue("@division", txtDivision.Text);
+                SqlCommand cmdStudentDetails = new SqlCommand(insertStudentDetails, con);
+
+                cmdStudentDetails.Parameters.AddWithValue("@prn", txtPRN.Text);
+                cmdStudentDetails.Parameters.AddWithValue("@fullname", txtFullName.Text);
+                cmdStudentDetails.Parameters.AddWithValue("@rollno", txtRollNo.Text);
+                cmdStudentDetails.Parameters.AddWithValue("@class", int.Parse(cmbClass.Text));
+                cmdStudentDetails.Parameters.AddWithValue("@division", txtDivision.Text);
+
+                SqlCommand cmdLoginDetails = new SqlCommand(insertLoginDetails, con);
+
+                cmdLoginDetails.Parameters.AddWithValue("@username", Username.Text);
+                cmdLoginDetails.Parameters.AddWithValue("@password", Password.Text);
 
                 try
                 {
                     con.Open();
-                    int rowsAffected = cmd.ExecuteNonQuery();
-                    return rowsAffected > 0;   // true if insert successful
+                    int rowsStudent = cmdStudentDetails.ExecuteNonQuery();
+                    int rowsLogin = cmdLoginDetails.ExecuteNonQuery();
+
+                    return (rowsStudent > 0 && rowsLogin > 0);
                 }
                 catch (SqlException ex)
                 {
@@ -211,6 +219,10 @@ namespace student_notes_making_system
             return true; // all validations passed
         }
 
+        private void label8_Click(object sender, EventArgs e)
+        {
+
+        }
     }
-    
+
 }
