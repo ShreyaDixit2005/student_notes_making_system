@@ -16,11 +16,11 @@ namespace student_notes_making_system
 
             if (!string.IsNullOrEmpty(username) && !string.IsNullOrEmpty(password))
             {
-                Application.Run(new notes_and_timet3()); // open main form directly
+                Application.Run(new notes_and_timet3());
             }
             else
             {
-                Application.Run(new Form1()); // open login form
+                Application.Run(new Form1());
             }
         }
     }

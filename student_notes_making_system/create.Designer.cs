@@ -100,7 +100,6 @@
             FormBorderStyle = FormBorderStyle.None;
             Name = "create";
             Text = "create";
-            Load += k;
             ResumeLayout(false);
             PerformLayout();
         }

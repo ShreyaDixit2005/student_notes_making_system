@@ -32,11 +32,6 @@ namespace student_notes_making_system
 
         }
 
-        private void k(object sender, EventArgs e)
-        {
-
-        }
-
         private void button1_Click(object sender, EventArgs e)
         {
             Note main = new Note();

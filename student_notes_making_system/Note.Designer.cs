@@ -31,14 +31,14 @@
             components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Note));
             panel1 = new Panel();
-            richTextBox1 = new RichTextBox();
-            button2 = new Button();
-            textBox1 = new TextBox();
-            label1 = new Label();
-            button3 = new Button();
-            button1 = new Button();
+            Save = new Button();
+            Content = new RichTextBox();
+            Pin = new Button();
+            TitleName = new TextBox();
+            TitleLable = new Label();
+            Delete = new Button();
+            Update = new Button();
             bindingSource1 = new BindingSource(components);
-            button4 = new Button();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)bindingSource1).BeginInit();
             SuspendLayout();
@@ -46,100 +46,101 @@
             // panel1
             // 
             panel1.BackColor = SystemColors.ActiveCaptionText;
-            panel1.Controls.Add(button4);
-            panel1.Controls.Add(richTextBox1);
-            panel1.Controls.Add(button2);
-            panel1.Controls.Add(textBox1);
-            panel1.Controls.Add(label1);
-            panel1.Controls.Add(button3);
-            panel1.Controls.Add(button1);
+            panel1.Controls.Add(Save);
+            panel1.Controls.Add(Content);
+            panel1.Controls.Add(Pin);
+            panel1.Controls.Add(TitleName);
+            panel1.Controls.Add(TitleLable);
+            panel1.Controls.Add(Delete);
+            panel1.Controls.Add(Update);
             panel1.Location = new Point(0, -1);
             panel1.Name = "panel1";
             panel1.Size = new Size(801, 451);
             panel1.TabIndex = 0;
             panel1.Paint += panel1_Paint;
             // 
-            // richTextBox1
+            // Save
             // 
-            richTextBox1.BackColor = SystemColors.InactiveCaptionText;
-            richTextBox1.Location = new Point(0, 106);
-            richTextBox1.Name = "richTextBox1";
-            richTextBox1.Size = new Size(684, 345);
-            richTextBox1.TabIndex = 11;
-            richTextBox1.Text = "";
-            richTextBox1.TextChanged += richTextBox1_TextChanged;
+            Save.BackgroundImage = (Image)resources.GetObject("Save.BackgroundImage");
+            Save.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            Save.ForeColor = SystemColors.AppWorkspace;
+            Save.Location = new Point(696, 262);
+            Save.Name = "Save";
+            Save.Size = new Size(92, 39);
+            Save.TabIndex = 12;
+            Save.Text = "Save";
+            Save.UseVisualStyleBackColor = true;
+            Save.Click += Save_Click;
             // 
-            // button2
+            // Content
             // 
-            button2.BackgroundImage = (Image)resources.GetObject("button2.BackgroundImage");
-            button2.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button2.ForeColor = SystemColors.AppWorkspace;
-            button2.Location = new Point(696, 307);
-            button2.Name = "button2";
-            button2.Size = new Size(92, 39);
-            button2.TabIndex = 9;
-            button2.Text = "Pin";
-            button2.UseVisualStyleBackColor = true;
+            Content.BackColor = SystemColors.InactiveCaptionText;
+            Content.Location = new Point(0, 106);
+            Content.Name = "Content";
+            Content.Size = new Size(684, 345);
+            Content.TabIndex = 11;
+            Content.Text = "";
+            Content.TextChanged += richTextBox1_TextChanged;
             // 
-            // textBox1
+            // Pin
             // 
-            textBox1.BackColor = Color.DimGray;
-            textBox1.BorderStyle = BorderStyle.None;
-            textBox1.Location = new Point(21, 56);
-            textBox1.Multiline = true;
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(255, 34);
-            textBox1.TabIndex = 7;
+            Pin.BackgroundImage = (Image)resources.GetObject("Pin.BackgroundImage");
+            Pin.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            Pin.ForeColor = SystemColors.AppWorkspace;
+            Pin.Location = new Point(696, 307);
+            Pin.Name = "Pin";
+            Pin.Size = new Size(92, 39);
+            Pin.TabIndex = 9;
+            Pin.Text = "Pin";
+            Pin.UseVisualStyleBackColor = true;
             // 
-            // label1
+            // TitleName
             // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Times New Roman", 22.2F, FontStyle.Italic, GraphicsUnit.Point, 0);
-            label1.ForeColor = Color.White;
-            label1.Location = new Point(12, 10);
-            label1.Name = "label1";
-            label1.Size = new Size(84, 43);
-            label1.TabIndex = 6;
-            label1.Text = "Title";
-            label1.Click += label1_Click;
+            TitleName.BackColor = Color.DimGray;
+            TitleName.BorderStyle = BorderStyle.None;
+            TitleName.Location = new Point(21, 56);
+            TitleName.Multiline = true;
+            TitleName.Name = "TitleName";
+            TitleName.Size = new Size(255, 34);
+            TitleName.TabIndex = 7;
             // 
-            // button3
+            // TitleLable
             // 
-            button3.BackgroundImage = (Image)resources.GetObject("button3.BackgroundImage");
-            button3.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button3.ForeColor = SystemColors.AppWorkspace;
-            button3.Location = new Point(696, 397);
-            button3.Name = "button3";
-            button3.Size = new Size(92, 39);
-            button3.TabIndex = 5;
-            button3.Text = "Delete";
-            button3.UseVisualStyleBackColor = true;
-            button3.Click += button3_Click;
+            TitleLable.AutoSize = true;
+            TitleLable.Font = new Font("Times New Roman", 22.2F, FontStyle.Italic, GraphicsUnit.Point, 0);
+            TitleLable.ForeColor = Color.White;
+            TitleLable.Location = new Point(12, 10);
+            TitleLable.Name = "TitleLable";
+            TitleLable.Size = new Size(84, 43);
+            TitleLable.TabIndex = 6;
+            TitleLable.Text = "Title";
+            TitleLable.Click += label1_Click;
             // 
-            // button1
+            // Delete
             // 
-            button1.BackgroundImage = (Image)resources.GetObject("button1.BackgroundImage");
-            button1.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button1.ForeColor = SystemColors.AppWorkspace;
-            button1.Location = new Point(696, 352);
-            button1.Name = "button1";
-            button1.Size = new Size(92, 39);
-            button1.TabIndex = 4;
-            button1.Text = "Update";
-            button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click;
+            Delete.BackgroundImage = (Image)resources.GetObject("Delete.BackgroundImage");
+            Delete.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            Delete.ForeColor = SystemColors.AppWorkspace;
+            Delete.Location = new Point(696, 397);
+            Delete.Name = "Delete";
+            Delete.Size = new Size(92, 39);
+            Delete.TabIndex = 5;
+            Delete.Text = "Delete";
+            Delete.UseVisualStyleBackColor = true;
+            Delete.Click += button3_Click;
             // 
-            // button4
+            // Update
             // 
-            button4.BackgroundImage = (Image)resources.GetObject("button4.BackgroundImage");
-            button4.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button4.ForeColor = SystemColors.AppWorkspace;
-            button4.Location = new Point(696, 262);
-            button4.Name = "button4";
-            button4.Size = new Size(92, 39);
-            button4.TabIndex = 12;
-            button4.Text = "Save";
-            button4.UseVisualStyleBackColor = true;
+            Update.BackgroundImage = (Image)resources.GetObject("Update.BackgroundImage");
+            Update.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            Update.ForeColor = SystemColors.AppWorkspace;
+            Update.Location = new Point(696, 352);
+            Update.Name = "Update";
+            Update.Size = new Size(92, 39);
+            Update.TabIndex = 4;
+            Update.Text = "Update";
+            Update.UseVisualStyleBackColor = true;
+            Update.Click += button1_Click;
             // 
             // Note
             // 
@@ -159,13 +160,13 @@
         #endregion
 
         private Panel panel1;
-        private Label label1;
-        private Button button3;
-        private Button button1;
-        private TextBox textBox1;
+        private Label TitleLable;
+        private Button Delete;
+        private Button Update;
+        private TextBox TitleName;
         private BindingSource bindingSource1;
-        private Button button2;
-        private RichTextBox richTextBox1;
-        private Button button4;
+        private Button Pin;
+        private RichTextBox Content;
+        private Button Save;
     }
 }
